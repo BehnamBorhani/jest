@@ -5,6 +5,8 @@ function getUserById(id) {
     { id: 2, name: "Nima", purchasesCount: 3 },
     { id: 3, name: "Pouya", purchasesCount: 8 },
   ];
+
+  return users.find((user) => user.id == id);
 }
 
 function sendEmail(name, message) {
