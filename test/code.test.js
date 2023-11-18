@@ -1,4 +1,4 @@
-const gte = require("../code");
+const { gte, welcomeMessage } = require("../code");
 
 describe("gte", () => {
   it("should return true if a is greater than b", () => {
@@ -14,5 +14,12 @@ describe("gte", () => {
   it("should return true if a is equal to b", () => {
     const result = gte(5, 5);
     expect(result).toBe(true);
+  });
+});
+
+describe("welcomeMessage", () => {
+  it("should return welcome message containing the name", () => {
+    const result = welcomeMessage("Behnam");
+    expect(result).toContain("Behnam");
   });
 });

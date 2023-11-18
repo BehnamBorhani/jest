@@ -1,12 +1,9 @@
 function gte(a, b) {
-  /* if (a > b) return true;
-  if (a < b) return false;
-  if (a == b) return true; */
-
-  if (a >= b) return true;
-  return false;
-
-//   return a >= b ? true : false;
+  return a >= b ? true : false;
 }
 
-module.exports = gte;
+function welcomeMessage(name) {
+  return `Hello ${name}, welcome to jest tutorial.`;
+}
+
+module.exports = { gte, welcomeMessage };
