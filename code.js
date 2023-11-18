@@ -10,4 +10,8 @@ function shoppingList() {
   return ["milk", "cake", "water", "apple"];
 }
 
-module.exports = { gte, welcomeMessage, shoppingList };
+function getUser() {
+  return { id: 1, name: "Behnam" };
+}
+
+module.exports = { gte, welcomeMessage, shoppingList, getUser };

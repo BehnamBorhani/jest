@@ -1,4 +1,4 @@
-const { gte, welcomeMessage, shoppingList } = require("../code");
+const { gte, welcomeMessage, shoppingList, getUser } = require("../code");
 
 describe("gte", () => {
   it("should return true if a is greater than b", () => {
@@ -28,5 +28,15 @@ describe("shoppingList", () => {
   it("should pass if the shopping list has milk on it", () => {
     const result = shoppingList();
     expect(result).toContain("milk");
+  });
+});
+
+describe("getUser", () => {
+  it("should return the user properly.", () => {
+    const result = getUser();
+    expect(result).toBe({ id: 1, name: "Behnam" });
+    //  expect(result).toEqual({ id: 1, name: "Behnam" });
+    //  expect(result).toMatchObject({ id: 1 });
+    //  expect(result).toHaveProperty("id", 1);
   });
 });
