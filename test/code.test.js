@@ -2,8 +2,11 @@ const service = require("../service");
 const calculateDiscount = require("../code");
 
 describe("calculateDiscount", () => {
-  it("should return 10 if user has more than 3 purchase.", () => {
+  beforeEach(() => {
     service.sendEmail = jest.fn();
+  });
+
+  it("should return 10 if user has more than 3 purchase.", () => {
     service.getUserById = jest.fn().mockReturnValue({
       id: 4,
       name: "john",
@@ -14,7 +17,6 @@ describe("calculateDiscount", () => {
   });
 
   it("should return 0 if user has less than 3 purchase.", () => {
-    service.sendEmail = jest.fn();
     service.getUserById = jest.fn().mockReturnValue({
       id: 4,
       name: "john",
@@ -22,5 +24,16 @@ describe("calculateDiscount", () => {
     });
 
     expect(calculateDiscount()).toBe(0);
+  });
+
+  it("should send email", () => {
+    service.getUserById = jest.fn().mockReturnValue({
+      id: 4,
+      name: "john",
+      purchasesCount: 1,
+    });
+
+    calculateDiscount();
+    expect(service.sendEmail).toHaveBeenCalled();
   });
 });
