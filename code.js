@@ -6,4 +6,8 @@ function welcomeMessage(name) {
   return `Hello ${name}, welcome to jest tutorial.`;
 }
 
-module.exports = { gte, welcomeMessage };
+function shoppingList() {
+  return ["milk", "cake", "water", "apple"];
+}
+
+module.exports = { gte, welcomeMessage, shoppingList };

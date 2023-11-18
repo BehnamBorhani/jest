@@ -1,4 +1,4 @@
-const { gte, welcomeMessage } = require("../code");
+const { gte, welcomeMessage, shoppingList } = require("../code");
 
 describe("gte", () => {
   it("should return true if a is greater than b", () => {
@@ -21,5 +21,12 @@ describe("welcomeMessage", () => {
   it("should return welcome message containing the name", () => {
     const result = welcomeMessage("Behnam");
     expect(result).toContain("Behnam");
+  });
+});
+
+describe("shoppingList", () => {
+  it("should pass if the shopping list has milk on it", () => {
+    const result = shoppingList();
+    expect(result).toContain("milk");
   });
 });
